@@ -46,6 +46,7 @@ add_library(${PROJECT_NAME}
 	src/unicodetext.cc
 	src/utils.cc
 	src/workspace.cc
+	src/script_utils.cc
 	
 	src/script_span/generated_entities.cc
 	src/script_span/getonescriptspan.cc
@@ -58,12 +59,5 @@ add_library(${PROJECT_NAME}
 	src/script_span/fixunicodevalue.cc
 	)
 
-# unit tests exec:
-add_executable(language_identifier_main src/language_identifier_main.cc)
-target_link_libraries(language_identifier_main cld3 ${Protobuf_LITE_LIBRARIES})
-
-add_executable(getonescriptspan_test src/script_span/getonescriptspan_test.cc)
-target_link_libraries(getonescriptspan_test cld3 ${Protobuf_LITE_LIBRARIES})
-
-add_executable(language_identifier_features_test src/language_identifier_features_test.cc)
-target_link_libraries(language_identifier_features_test cld3 ${Protobuf_LITE_LIBRARIES})
+add_library(cld3net MODULE src/lib.cc)
+target_link_libraries(cld3net cld3 ${Protobuf_LITE_LIBRARIES})
