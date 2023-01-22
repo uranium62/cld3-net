@@ -141,7 +141,7 @@ public static CLD3Results DetectLanguages(string text) { throw null; }
 
 ### Examples
 A few examples of how to use api. You can see more examples in tests.
-```
+```cs
 var cld3 = CLD3Detector.DetectLanguage("Hello, how are you?");
 
 var cld3 = CLD3Detector.DetectLanguages("Hello, how are you? Привіт, як справи?");
